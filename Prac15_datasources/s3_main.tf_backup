@@ -1,0 +1,21 @@
+resource "aws_s3_bucket" "ritushindeterraforms3bucketindia" {
+  bucket = "ritushindeterraforms3bucketindia"
+
+  tags = {
+    Name        = "ritushindeterraforms3bucketindia"
+  }
+}
+
+data "local_file" "terraform_file" {
+    filename = "${path.module}/terraform_file.txt"
+}
+
+output "file_contents" {
+  value = data.local_file.terraform_file.content
+}
+
+resource "aws_s3_bucket_object" "s3_object" {
+  bucket = aws_s3_bucket.ritushindeterraforms3bucketindia.bucket
+  key = "terraform_file"
+  source = data.local_file.terraform_file.filename
+}

@@ -1,0 +1,5 @@
+you need to create 4 users, 
+one should have access to EC2, 
+another to S3 and the 
+third one to IAM. 
+the fourth user should have access to all 3.

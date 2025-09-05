@@ -1,0 +1,8 @@
+create a security group
+name - terraform_security_group
+inbound rules - 
+1) allow ssh on port 22
+2) allow tcp on a range of port 80 to 100
+
+outbound rules
+1) allow all traffic
